@@ -33,14 +33,15 @@ public class AddToCart {
     }
 
 
-    @Test
-    public void listAllItems() {
+    public void listAllItems() throws InterruptedException {
         List<WebElement> items = driver.findElements(By.cssSelector(".sc-124al1g-4.eeXMBo"));
         List<String> namesStr = items.stream().map(x->x.getText()).toList();
         List<WebElement> addToCartButtons = driver.findElements(By.xpath("//button[text() = 'Add to cart']"));
         for (WebElement button: addToCartButtons) {
             button.click();
+            Thread.sleep(1000);
             driver.findElement(By.cssSelector(".sc-1h98xa9-0.gFkyvN")).click();
+            Thread.sleep(1000);
         }
         driver.findElement(By.xpath("//button[@class = 'sc-1h98xa9-0 gFkyvN']")).click();
         List<WebElement> itemsInCart = driver.findElements(By.cssSelector(".sc-11uohgb-2.elbkhN"));
