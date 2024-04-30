@@ -1,10 +1,11 @@
+package org.example.cart;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -36,10 +37,12 @@ public class AddToCart {
     public void listAllItems() {
         List<WebElement> items = driver.findElements(By.cssSelector(".sc-124al1g-4.eeXMBo"));
         List<String> namesStr = items.stream().map(x->x.getText()).toList();
-        List<WebElement> addToCartButtons = driver.findElements(By.xpath("//button[@class = 'sc-124al1g-0 jCsgpZ']"));
+        List<WebElement> addToCartButtons = driver.findElements(By.xpath("//button[text() = 'Add to cart']"));
         for (WebElement button: addToCartButtons) {
             button.click();
+            driver.findElement(By.cssSelector(".sc-1h98xa9-0.gFkyvN")).click();
         }
+        driver.findElement(By.xpath("//button[@class = 'sc-1h98xa9-0 gFkyvN']")).click();
         List<WebElement> itemsInCart = driver.findElements(By.cssSelector(".sc-11uohgb-2.elbkhN"));
         List<String> namesItemsInCart = itemsInCart.stream().map(x->x.getText()).toList();
         Assert.assertEquals(namesItemsInCart, namesStr);
