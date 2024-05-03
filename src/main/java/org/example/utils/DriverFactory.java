@@ -1,4 +1,4 @@
-package src.main.java.utils;
+package src.main.java.org.example.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

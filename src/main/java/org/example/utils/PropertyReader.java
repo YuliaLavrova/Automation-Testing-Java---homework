@@ -1,4 +1,4 @@
-package src.main.java.utils;
+package src.main.java.org.example.utils;
 
 import org.example.enums.Capability;
 import org.example.enums.PropertyFile;

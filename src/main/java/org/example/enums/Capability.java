@@ -1,4 +1,4 @@
-package src.main.java.enums;
+package src.main.java.org.example.enums;
 
 public enum Capability {
     BROWSER("browser", "chrome"),

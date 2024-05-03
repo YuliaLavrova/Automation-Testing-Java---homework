@@ -1,4 +1,4 @@
-package src.test;
+package src.test.java.org.example.cart;
 
 import org.example.enums.Capability;
 import org.example.utils.DriverFactory;

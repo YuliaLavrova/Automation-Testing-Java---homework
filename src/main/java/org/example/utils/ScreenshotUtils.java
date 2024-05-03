@@ -1,4 +1,4 @@
-package src.main.java.utils;
+package src.main.java.org.example.utils;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;

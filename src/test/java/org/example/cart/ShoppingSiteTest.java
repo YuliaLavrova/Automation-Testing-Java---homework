@@ -1,4 +1,4 @@
-package src.test;
+package src.test.java.org.example.cart;
 
 import org.example.pages.CartPage;
 import org.example.pages.HomePage;

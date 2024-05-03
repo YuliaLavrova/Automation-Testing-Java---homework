@@ -1,4 +1,4 @@
-package src.main.java.pages;
+package src.main.java.org.example.pages;
 
 import org.openqa.selenium.WebDriver;
 
