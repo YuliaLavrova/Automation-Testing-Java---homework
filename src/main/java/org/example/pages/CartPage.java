@@ -33,6 +33,7 @@ public class CartPage extends BasePage{
         List<String> nameOfAllItemsInCart = itemsInCart.stream().map(x->x.getText()).toList();
         return nameOfAllItemsInCart;
     }
+
     public void closeCartBtn() {
         closeCartBtn.click();
     }
