@@ -12,22 +12,15 @@ public class CartPage extends BasePage{
     @FindBy(css = ".sc-1h98xa9-0.gFkyvN")
     private WebElement closeCartBtn;
 
-    @FindBy(xpath = "//button[@class = 'sc-1h98xa9-0 gFkyvN']")
-    private WebElement openCartBtn;
-
     @FindBy(css = ".sc-11uohgb-2.elbkhN")
     private WebElement itemInCart;
 
     @FindBy(css = ".sc-11uohgb-2.elbkhN")
-    private List<WebElement> allItems;
+    private List<WebElement> allItemsInCart;
 
     public CartPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
-    }
-
-    public void openCart() {
-        openCartBtn.click();
     }
 
     public String nameOfItemInCart() {
@@ -36,7 +29,7 @@ public class CartPage extends BasePage{
     }
 
     public List<String> nameOfAllItemsInCart() {
-        List<WebElement> itemsInCart = allItems;
+        List<WebElement> itemsInCart = allItemsInCart;
         List<String> nameOfAllItemsInCart = itemsInCart.stream().map(x->x.getText()).toList();
         return nameOfAllItemsInCart;
     }
