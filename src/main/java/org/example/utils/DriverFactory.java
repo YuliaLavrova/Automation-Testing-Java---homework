@@ -4,15 +4,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class DriverFactory {
 
     public static WebDriver createDriver(String browser) {
+        URL url;
+        try {
+            url = new URL("http://localhost:4444");
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
         if (browser.equals("chrome")) {
-            System.setProperty("Webdriver.chrome.driver", "C://chromedriver");
-            return new ChromeDriver();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            return new RemoteWebDriver(url,chromeOptions);
         } else if(browser.equals("firefox")) {
-            System.setProperty("Webdriver.firefox.driver", "C://geckodriver");
-            return new FirefoxDriver();
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+            return new RemoteWebDriver(url, firefoxOptions);
         }
         return null;
     }
