@@ -1,4 +1,4 @@
-package src.main.java.org.example.utils;
+package src.main.java.org.example.utils.retry;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;

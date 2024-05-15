@@ -1,28 +1,27 @@
 package src.main.java.org.example.listeners;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.testng.IClass;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.annotations.Test;
 
 public class TestListener implements ITestListener {
 
+    private static final Logger LOGGER = LogManager.getLogger(TestListener.class);
     @Override
     public void onTestStart(ITestResult result) {
-        System.out.println("=========================================================");
-        System.out.println("Test " + result.getMethod().getMethodName() +  " started");
-        System.out.println("=========================================================");
+        LOGGER.info("========= Test started =========");
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        System.out.println("=========================================================");
-        System.out.println("Test " + result.getMethod().getMethodName() +  " success");
-        System.out.println("=========================================================");
+        LOGGER.info("========= Test success =========");
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        System.out.println("=========================================================");
-        System.out.println("Test " + result.getMethod().getMethodName() +  " failed");
-        System.out.println("=========================================================");
+        LOGGER.error("========= Test failed =========");
     }
 }
